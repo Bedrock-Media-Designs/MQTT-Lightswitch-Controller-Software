@@ -1,6 +1,8 @@
 # MQTT-Lightswitch-Controller-V1
 Copyright 2020 Bedrock Media Productions Pty Ltd www.bedrockmediaproductions.com.au
 
+
+# NOTE THIS CODE IS UNTESTED. WE WILL UPDATED THIS AS WE DEVELOP IT
 MQTT SCRIPT FOR RECIEVING INPUTS OVER I2C WITH SSINGLE, DOUBLE AND HOLD EVENTS AND PUBLISHING TO MQTT
 
 Features:
