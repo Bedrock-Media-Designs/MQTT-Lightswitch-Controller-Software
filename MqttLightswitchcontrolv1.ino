@@ -17,7 +17,7 @@ EthernetClient network_client;
 IPAddress mqtt_broker(XXX, XXX, XXX, XXX);
 PubSubClient mqtt(network_client);
 
-String mqtt_client = "ic2buttons";
+String mqtt_client = "Lcontrol-01";
 const char mqtt_user[] = "XXXX";
 const char mqtt_pass[] = "XXXX";
 unsigned long mqtt_timer = 0;
