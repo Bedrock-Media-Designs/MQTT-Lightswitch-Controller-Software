@@ -35,4 +35,4 @@ const char watchdog_pin = 3;
 const byte controller_id = 1;
 
 // Interval to report heartbeat
-#define HEARTBEAT     15000
+#define HEARTBEAT     60000         // Set time in ms for Heartbeat 60000 = 1Min
