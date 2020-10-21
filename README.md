@@ -24,6 +24,10 @@ ARDUINO SCRIPT FOR RECEIVING BUTTON INPUTS OVER I2C AND PUBLISHING VIA MQTT
 
 `{event: status, ip: ###.###.###.###, controller: #}`
 
+## Required libraries
+* PubSubClient [https://github.com/knolleary/pubsubclient](https://github.com/knolleary/pubsubclient)
+* Adafruit_MCP23017 [https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library](https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library)
+
 ## CREDITS
 Written by 
 * Jon Oxer               - Copyright 2015-2017 SuperHouse Automation Pty Ltd <info@superhouse.tv>
