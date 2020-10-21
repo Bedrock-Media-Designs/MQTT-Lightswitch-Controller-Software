@@ -2,28 +2,22 @@
 Copyright 2020 Bedrock Media Productions Pty Ltd www.bedrockmediaproductions.com.au
 
 
-# NOTE THIS CODE IS UNTESTED. WE WILL UPDATED THIS AS WE DEVELOP IT
-MQTT SCRIPT FOR RECIEVING INPUTS OVER I2C WITH SSINGLE, DOUBLE AND HOLD EVENTS AND PUBLISHING TO MQTT
+ARDUINO SCRIPT FOR RECEIVING BUTTON INPUTS OVER I2C AND PUBLISHING VIA MQTT
 
-Features:
+## Features:
 
-This project aims to use an Arduino to read inputs from MCP23017 IO expanders and publish events to MQTT
+*Single Arduino to read 96 inputs from MCP23017 IO expanders and publish events to MQTT.
 
-##MQTT Topics
+*Sends MQTT payloads as JSON formatted string for easy parsing within your favourite automation software.
 
-
-
-More infomation to be added soon
-
-More information:
+*Simple config.h file to edit your network and mqtt details, with main code ready to go without modification.
 
 
-
- ## CREDITS 
+## CREDITS 
 Written by 
 * Jon Oxer               - Copyright 2015-2017 SuperHouse Automation Pty Ltd <info@superhouse.tv>
 * James Kennewell        - Copyright 2019-2020 Bedrock Media Productions Pty Ltd <james@bedrockmediaproductions.com.au>
-* Chris Aitken @aitken85 - SuperHouse Automation Discord Server
+* Chris Aitken @aitken85 - SuperHouse Automation Discord Server | github.com/caitken-com
 * Lusa         @lusa     - SuperHouse Automation Discord Server
 
 ## DISTRIBUTION
