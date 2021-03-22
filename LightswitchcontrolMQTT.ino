@@ -58,6 +58,8 @@ bool getTimer (unsigned long &tmr, unsigned long interval)
   return false;
 }
 
+
+
 /**
  * Converts IP address to char array
  *
@@ -70,6 +72,8 @@ char* ip2CharArray(IPAddress address)
     sprintf(ip, "%d.%d.%d.%d", address[0], address[1], address[2], address[3]);
     return ip;
 }
+
+
 
 /**
  * Reconnect to MQTT broker
