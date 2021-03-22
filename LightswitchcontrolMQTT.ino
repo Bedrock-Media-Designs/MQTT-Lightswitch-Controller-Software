@@ -109,21 +109,23 @@ bool mqttReconnect()
 
 
 
-
 /**
  * Reset watch-dog module
  * Prevents Arduino from resetting if everything is fine
  *
  * @return void
  */
+#ifdef ENABLE_WATCHDOG
 void resetWatchDog()
 {
-  if (getTimer(watchdog_timer, 1000))
-  {
-    watchdog_status = !watchdog_status;
-    digitalWrite(watchdog_pin, watchdog_status);
-  }
+  if (getTimer(watchdog_timer, 30000))
+	{
+		digitalWrite(watchdog_pin, HIGH);
+		delay(20);
+		digitalWrite(watchdog_pin, LOW);
+	}
 }
+#endif
 
 
 
@@ -230,6 +232,7 @@ void setup()
     }
   }
 }
+
 
 
 /**
