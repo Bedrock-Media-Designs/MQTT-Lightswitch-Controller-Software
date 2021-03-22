@@ -193,6 +193,10 @@ void setup()
 {
   Wire.begin();
 
+  #ifdef ENABLE_WATCHDOG
+    pinMode(watchdog_pin, OUTPUT);
+  #endif
+
   #ifdef ENABLE_MAC_ADDRESS_ROM
     ardunio_mac[0] = readRegister(0xFA);
     ardunio_mac[1] = readRegister(0xFB);
