@@ -34,11 +34,11 @@ unsigned long button_timers[96] = {0};
  * Determine if given timer has reached given interval
  *
  * @param unsigned long tmr The current timer
- * @param int interval Length of time to run timer
+ * @param unsigned long interval Length of time to run timer
  * @return bool True when timer is complete
  * @return bool False when timer is counting
  */
-bool getTimer (unsigned long &tmr, int interval)
+bool getTimer (unsigned long &tmr, unsigned long interval)
 {
   // Set initial value
   if (tmr < 1)
