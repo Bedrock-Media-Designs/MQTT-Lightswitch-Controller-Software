@@ -34,11 +34,11 @@ unsigned long button_timers[96] = {0};
  * Determine if given timer has reached given interval
  *
  * @param unsigned long tmr The current timer
- * @param int interval Length of time to run timer
+ * @param unsigned long interval Length of time to run timer
  * @return bool True when timer is complete
  * @return bool False when timer is counting
  */
-bool getTimer (unsigned long &tmr, int interval)
+bool getTimer (unsigned long &tmr, unsigned long interval)
 {
   // Set initial value
   if (tmr < 1)
@@ -58,6 +58,8 @@ bool getTimer (unsigned long &tmr, int interval)
   return false;
 }
 
+
+
 /**
  * Converts IP address to char array
  *
@@ -70,6 +72,8 @@ char* ip2CharArray(IPAddress address)
     sprintf(ip, "%d.%d.%d.%d", address[0], address[1], address[2], address[3]);
     return ip;
 }
+
+
 
 /**
  * Reconnect to MQTT broker
@@ -105,21 +109,23 @@ bool mqttReconnect()
 
 
 
-
 /**
  * Reset watch-dog module
  * Prevents Arduino from resetting if everything is fine
  *
  * @return void
  */
+#ifdef ENABLE_WATCHDOG
 void resetWatchDog()
 {
-  if (getTimer(watchdog_timer, 1000))
-  {
-    watchdog_status = !watchdog_status;
-    digitalWrite(watchdog_pin, watchdog_status);
-  }
+  if (getTimer(watchdog_timer, 30000))
+	{
+		digitalWrite(watchdog_pin, HIGH);
+		delay(20);
+		digitalWrite(watchdog_pin, LOW);
+	}
 }
+#endif
 
 
 
@@ -187,6 +193,10 @@ void setup()
 {
   Wire.begin();
 
+  #ifdef ENABLE_WATCHDOG
+    pinMode(watchdog_pin, OUTPUT);
+  #endif
+
   #ifdef ENABLE_MAC_ADDRESS_ROM
     ardunio_mac[0] = readRegister(0xFA);
     ardunio_mac[1] = readRegister(0xFB);
@@ -226,6 +236,7 @@ void setup()
     }
   }
 }
+
 
 
 /**
